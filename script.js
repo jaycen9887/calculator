@@ -1,14 +1,30 @@
-var numId;
-var num;
+$(document).ready(function(){
 
-//panel body on click
+    var num = "";
+    var newNum = "";
+    var op = "";
+    var firstNum = $("#first-number");
+    var secondNum = $("#second-number");
+    var operator = $("#operator");
+    var totalDiv = $("#result");
 
-$("#panel-body").on("click", function(){
+
+
+
     
-    numId = ($(this).attr("id"));
-    num = parseInt(numId.text());
+    //When a button with class of number is clicked: Get the id of the button, the text of the button, and store it in a varable.
+    $(".number").on("click", function(){
     
-    //if element.text === num 
-        // store in num array
+        num += $(this).text();
+        firstNum.text(num);
+    });
     
+    $(".operator").on("click", function(){
+    
+        op = $(this).text();
+        operator.text(op);
+        
+    
+    });
 });
+
