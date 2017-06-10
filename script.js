@@ -1,8 +1,10 @@
+var op = "";
 $(document).ready(function(){
 
     var num = "";
     var newNum = "";
-    var op = "";
+    
+    var result;
     var firstNum = $("#first-number");
     var secondNum = $("#second-number");
     var operator = $("#operator");
@@ -10,7 +12,34 @@ $(document).ready(function(){
     var lo =$("#first-number");
 
 
-
+/***********************  FUNCTIONS **********************************/
+    
+    function addition(x,y) {
+        result = parseInt(x) + parseInt(y);
+        return result;
+    }
+    
+    function subtract(x,y) {
+        result = parseInt(x) - parseInt(y);
+        return result;
+    }
+    
+    function multiplcation(x,y){
+        result = parseInt(x) * parseInt(y);
+        return
+    }
+    
+    function division(x,y){
+        result = parseInt(x) / parseInt(y);
+        return result;
+    }
+    
+    function power(x,y){
+        result = Math.pow(parseInt(x),parseInt(y));
+        return result;
+    }
+    
+    
 
     
     //When a button with class of number is clicked: Get the id of the button, the text of the button, and store it in a varable.
@@ -29,6 +58,22 @@ $(document).ready(function(){
         lo = $("#second-number");
         
     
+    });
+    
+    $(".equal").on("click", function(){
+        if (op === "+"){
+            addition(newNum,num);
+        }else if(op === "-" || op === "&sub;"){
+            subtract(newNum,num);
+        }else if (op === "*"){
+            multiplcation(newNum,num);
+        }else if (op === "/"){
+            division(newNum,num);
+        }else if (op === "^"){
+            power(newNum,num);
+        }
+        
+        totalDiv.text(result);
     });
 });
 
