@@ -1,27 +1,28 @@
 var op = "";
-$(document).ready(function(){
+var num = "";
+var newNum = "";
+var result;
 
-    var num = "";
-    var newNum = "";
+
+$(document).ready(function(){
+var firstNum = $("#first-number");
+var secondNum = $("#second-number");
+var operator = $("#operator");
+var totalDiv = $("#result");
+var lo =$("#first-number");
     
-    var result;
-    var firstNum = $("#first-number");
-    var secondNum = $("#second-number");
-    var operator = $("#operator");
-    var totalDiv = $("#result");
-    var lo =$("#first-number");
 
 
 /***********************  FUNCTIONS **********************************/
     
     function addition(x,y) {
         result = parseInt(x) + parseInt(y);
-        return result;
+        totalDiv.text(result);
     }
     
     function subtract(x,y) {
-        result = parseInt(x) - parseInt(y);
-        return result;
+        result = (parseInt(x) - parseInt(y));
+       totalDiv.text(result);
     }
     
     function multiplcation(x,y){
@@ -63,17 +64,16 @@ $(document).ready(function(){
     $(".equal").on("click", function(){
         if (op === "+"){
             addition(newNum,num);
-        }else if(op === "-" || op === "&sub;"){
+        }else if(op === "&minus;"){
             subtract(newNum,num);
-        }else if (op === "*"){
+        }else if (op === "&times;"){
             multiplcation(newNum,num);
-        }else if (op === "/"){
+        }else if (op === "&divide;"){
             division(newNum,num);
         }else if (op === "^"){
             power(newNum,num);
         }
         
-        totalDiv.text(result);
     });
 });
 
