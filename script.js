@@ -32,3 +32,10 @@ $(document).ready(function(){
     });
 });
 
+
+// Clear Function//
+
+$(".button-clear").click(function(){ 
+    resetCalculator("0"); 
+});
+
