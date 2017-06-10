@@ -7,6 +7,7 @@ $(document).ready(function(){
     var secondNum = $("#second-number");
     var operator = $("#operator");
     var totalDiv = $("#result");
+    var lo =$("#first-number");
 
 
 
@@ -16,13 +17,16 @@ $(document).ready(function(){
     $(".number").on("click", function(){
     
         num += $(this).text();
-        firstNum.text(num);
+        lo.text(num);
     });
     
     $(".operator").on("click", function(){
     
         op = $(this).text();
         operator.text(op);
+        newNum = num;
+        num = "";
+        lo = $("#second-number");
         
     
     });
